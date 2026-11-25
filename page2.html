@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head><meta charset="UTF-8"></head>
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Arial', sans-serif; }
+
+body {
+  background: linear-gradient(135deg, #0f0f0f, #1a1a2e, #16213e);
+  color:white;
+  min-height:100vh;
+  text-align:center;
+  padding:20px;
+}
+
+h1 {
+  font-size:50px;
+  background: linear-gradient(90deg, #ffcc00, #ff6b00, #ffcc00);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  margin:30px 0;
+}
+
+.box {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  border:1px solid rgba(255,255,255,0.2);
+  border-radius:20px;
+  padding:20px;
+  width:90%;
+  max-width:400px;
+  margin:15px auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+input {
+  width:100%;
+  padding:15px;
+  margin:10px 0;
+  border-radius:12px;
+  border:1px solid #333;
+  background:#111;
+  color:white;
+  font-size:18px;
+  outline:none;
+}
+
+input:focus { border-color:#ffcc00; box-shadow:0 0 10px #ffcc00; }
+
+button {
+  width:100%;
+  padding:15px;
+  margin-top:15px;
+  font-size:20px;
+  font-weight:bold;
+  color:black;
+  background: linear-gradient(90deg, #ffcc00, #ffaa00);
+  border:none;
+  border-radius:12px;
+  cursor:pointer;
+  box-shadow:0 5px 15px rgba(255,204,0,0.4);
+}
+
+button:hover { transform:scale(1.03); }
+button:active { transform:scale(0.97); }
+
+.card {
+  background: rgba(255,255,255,0.08);
+  border-radius:20px;
+  padding:20px;
+  margin:15px auto;
+  max-width:400px;
+}
+</style>
+<body>
+<center>
+<h2>اختار عدد اللاعبين</h2>
+<br>
+<button onclick="go(1)">لاعب واحد مع الذكاء الاصطناعي - 4 عربيات</button>
+<br><br>
+<button onclick="go(2)">2 لاعب - عربيتين</button>
+<br><br>
+<button onclick="go(3)">3 لاعبين - 3 عربيات</button>
+<br><br>
+<button onclick="go(4)">4 لاعبين - 4 عربيات</button>
+</center>
+<script>
+function go(n){
+  if(n==1){
+    localStorage.setItem('players','4');
+    localStorage.setItem('ai','3');
+    localStorage.setItem('human','1');
+  } else {
+    localStorage.setItem('players', n);
+    localStorage.setItem('ai','0');
+    localStorage.setItem('human', n);
+  }
+  location.href='page3.html';
+}
+</script>
+</body>
+</html>
